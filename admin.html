@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="admin.html">Panel Admin</a></li>
+            <li><a href="index.html">Ver Sitio</a></li>
+            <li><a href="login.html">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Agregar Alberca al Catálogo</h2>
+        <form onsubmit="agregarProducto(event)">
+            <label>Nombre:</label>
+            <input type="text" id="nombreProducto" required>
+
+            <label>Descripción:</label>
+            <textarea id="descProducto" rows="3" required></textarea>
+
+            <label>URL de imagen:</label>
+            <input type="text" id="imgProducto" placeholder="img/fibra.jpg" required>
+
+            <button type="submit">Agregar al Catálogo</button>
+        </form>
+
+        <h3>Vista Previa</h3>
+        <div id="catalogo-preview" class="catalogo"></div>
+    </main>
+
+    <script>
+        function agregarProducto(e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById("nombreProducto").value;
+            const descripcion = document.getElementById("descProducto").value;
+            const imagen = document.getElementById("imgProducto").value;
+
+            const contenedor = document.getElementById("catalogo-preview");
+
+            const div = document.createElement("div");
+            div.className = "producto";
+            div.innerHTML = `
+                <img src="${imagen}" alt="${nombre}">
+                <h3>${nombre}</h3>
+                <p>${descripcion}</p>
+                <button disabled>Agregar al carrito</button>
+            `;
+            contenedor.appendChild(div);
+
+            // Limpiar el formulario
+            document.getElementById("nombreProducto").value = '';
+            document.getElementById("descProducto").value = '';
+            document.getElementById("imgProducto").value = '';
+        }
+    </script>
+</body>
+</html>
