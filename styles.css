@@ -14,76 +14,47 @@ header {
     padding: 1rem 0;
     text-align: center; /* Centrar el contenido del header */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    display: flex; /* **NUEVO: Usar flexbox para organizar elementos** */
-    flex-direction: column; /* **NUEVO: Apilar elementos verticalmente** */
-    align-items: center; /* **NUEVO: Centrar horizontalmente los elementos hijos** */
+    display: flex; /* Usar flexbox para organizar elementos */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    align-items: center; /* Centrar horizontalmente los elementos hijos */
 }
 
 /* Estilo para el título principal */
 .main-title {
     margin-top: 15px; /* Espacio arriba */
-    margin-bottom: 20px; /* **MODIFICADO: Más espacio debajo para separar de la navegación** */
-    font-size: 3em; /* **MODIFICADO: Un poco más grande para destacarlo** */
-    /* text-align: center; ya está centrado por el header flexbox */
+    margin-bottom: 20px; /* Espacio debajo para separar de la navegación */
+    font-size: 3em; /* Un poco más grande para destacarlo */
 }
 
 /* Estilos para la navegación centrada */
 .centered-nav {
-    width: 100%; /* **NUEVO: Ocupa todo el ancho** */
+    width: 100%; /* Ocupa todo el ancho */
     background-color: #7b1fa2; /* Un poco más claro */
-    padding: 10px 0; /* **MODIFICADO: Espaciado interno ajustado** */
+    padding: 10px 0; /* Espaciado interno */
 }
 
-.centered-nav ul { /* **MODIFICADO** */
+.centered-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* **NUEVO: Hace que los elementos de la lista se pongan en línea** */
-    justify-content: center; /* **NUEVO: Centra los ítems de la lista** */
-    gap: 20px; /* **NUEVO: Espacio entre los ítems de navegación** */
+    display: flex; /* Hace que los elementos de la lista se pongan en línea */
+    justify-content: center; /* Centra los ítems de la lista */
+    gap: 20px; /* Espacio entre los ítems de navegación */
 }
 
-.centered-nav ul li a { /* **MODIFICADO** */
+.centered-nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 8px 15px; /* **MODIFICADO: Ajusta el padding para un look más compacto** */
+    padding: 8px 15px; /* Ajusta el padding para un look más compacto */
     display: block;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    border-radius: 5px; /* **NUEVO: Bordes ligeramente redondeados** */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
 }
-/* El hover y active de nav ul li a se mantienen igual */
+
 .centered-nav ul li a:hover,
 .centered-nav ul li a.active {
     background-color: #9c27b0; /* Morado más vivo */
     transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
-}
-
-header h1 {
-    margin-top: 15px;
-    margin-bottom: 0;
-    font-size: 2.5em;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #7b1fa2; /* Un poco más claro */
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: block;
-    transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-    background-color: #9c27b0; /* Morado más vivo */
 }
 
 main {
@@ -329,15 +300,21 @@ button[type="submit"]:hover {
 
 /* Media Queries para Responsividad */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
+    header {
+        padding: 1rem 0;
     }
 
-    nav ul {
-        flex-direction: column;
+    .main-title {
+        font-size: 2.2em; /* Ajustar el tamaño del título en móviles */
+        margin-bottom: 15px;
     }
 
-    nav ul li a {
+    .centered-nav ul {
+        flex-direction: column; /* Apilar los ítems de navegación en móviles */
+        gap: 5px; /* Menos espacio entre ellos */
+    }
+
+    .centered-nav ul li a {
         padding: 10px 15px;
     }
 
