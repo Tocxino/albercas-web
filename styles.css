@@ -176,6 +176,91 @@ main {
     margin-bottom: 0;
 }
 
+/* Añadir un poco de espacio al contenedor de reseñas */
+.reviews-container h2 {
+    color: #6a1b9a;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Estilos específicos para el formulario de reseña */
+.review-form {
+    max-width: 600px;
+    margin: 30px auto; /* Centrar el formulario y darle espacio */
+    padding: 30px;
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Estilos de las estrellas (radio buttons ocultos con etiquetas estilizadas) */
+.star-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el grupo de estrellas */
+    margin-bottom: 25px;
+}
+
+.star-rating label {
+    margin-bottom: 10px; /* Espacio entre el texto "Calificación" y las estrellas */
+}
+
+.stars {
+    direction: rtl; /* Invierte el orden para que la 5ta estrella esté a la izquierda */
+    font-size: 2.5em; /* Tamaño de las estrellas */
+    color: #ccc; /* Color por defecto de las estrellas */
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.stars input[type="radio"] {
+    display: none; /* Oculta los radio buttons reales */
+}
+
+.stars label {
+    cursor: pointer;
+    padding: 0 5px; /* Espacio entre estrellas */
+    transition: color 0.2s ease-in-out;
+    display: inline-block; /* Permite que las etiquetas de estrellas estén en línea */
+}
+
+/* Color de las estrellas cuando están seleccionadas o al pasar el ratón */
+.stars input[type="radio"]:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+    color: #ffcc00; /* Color dorado para las estrellas seleccionadas/hover */
+}
+
+/* Color de las estrellas cuando se deseleccionan (quitan el hover) */
+.stars input[type="radio"]:checked + label:hover,
+.stars input[type="radio"]:checked ~ label:hover,
+.stars input[type="radio"]:checked ~ label:hover ~ label,
+.stars label:hover ~ input[type="radio"]:checked ~ label {
+    color: #ffcc00; /* Asegura que mantengan el color dorado */
+}
+
+
+/* Estilo para los botones de submit del formulario de reseña */
+.review-form button[type="submit"] {
+    background-color: #ff9800; /* Naranja vibrante */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.review-form button[type="submit"]:hover {
+    background-color: #fb8c00;
+    transform: translateY(-2px);
+}
+
+
 /* Estilos de la página de Pedidos (pedidos.html) */
 .order-form-container {
     max-width: 700px;
@@ -337,5 +422,10 @@ button[type="submit"]:hover {
     .lo-quiero-btn {
         width: 100%; /* El botón ocupa todo el ancho */
         box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+    }
+
+    /* Ajustes para el formulario de reseñas en móviles */
+    .review-form {
+        padding: 20px;
     }
 }
