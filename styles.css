@@ -12,8 +12,50 @@ header {
     background-color: #6a1b9a; /* Morado Oscuro */
     color: white;
     padding: 1rem 0;
-    text-align: center;
+    text-align: center; /* Centrar el contenido del header */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex; /* **NUEVO: Usar flexbox para organizar elementos** */
+    flex-direction: column; /* **NUEVO: Apilar elementos verticalmente** */
+    align-items: center; /* **NUEVO: Centrar horizontalmente los elementos hijos** */
+}
+
+/* Estilo para el título principal */
+.main-title {
+    margin-top: 15px; /* Espacio arriba */
+    margin-bottom: 20px; /* **MODIFICADO: Más espacio debajo para separar de la navegación** */
+    font-size: 3em; /* **MODIFICADO: Un poco más grande para destacarlo** */
+    /* text-align: center; ya está centrado por el header flexbox */
+}
+
+/* Estilos para la navegación centrada */
+.centered-nav {
+    width: 100%; /* **NUEVO: Ocupa todo el ancho** */
+    background-color: #7b1fa2; /* Un poco más claro */
+    padding: 10px 0; /* **MODIFICADO: Espaciado interno ajustado** */
+}
+
+.centered-nav ul { /* **MODIFICADO** */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* **NUEVO: Hace que los elementos de la lista se pongan en línea** */
+    justify-content: center; /* **NUEVO: Centra los ítems de la lista** */
+    gap: 20px; /* **NUEVO: Espacio entre los ítems de navegación** */
+}
+
+.centered-nav ul li a { /* **MODIFICADO** */
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px; /* **MODIFICADO: Ajusta el padding para un look más compacto** */
+    display: block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 5px; /* **NUEVO: Bordes ligeramente redondeados** */
+}
+/* El hover y active de nav ul li a se mantienen igual */
+.centered-nav ul li a:hover,
+.centered-nav ul li a.active {
+    background-color: #9c27b0; /* Morado más vivo */
+    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
 }
 
 header h1 {
