@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h2>Iniciar Sesión</h2>
+        <form onsubmit="login(event)">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" required>
+
+            <label for="clave">Contraseña:</label>
+            <input type="password" id="clave" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+        <p>Usuario: <b>admin1</b> / Contraseña: <b>admin123</b><br>
+        Usuario: <b>cliente</b> / Contraseña: <b>cliente123</b></p>
+    </main>
+
+    <script>
+        function login(e) {
+            e.preventDefault();
+            const user = document.getElementById('usuario').value;
+            const pass = document.getElementById('clave').value;
+
+            if (user === 'admin' && pass === 'admin123') {
+                window.location.href = 'admin.html';
+            } else if (user === 'cliente' && pass === 'cliente123') {
+                window.location.href = 'index.html';
+            } else {
+                alert('Usuario o contraseña incorrectos');
+            }
+        }
+    </script>
+</body>
+</html>

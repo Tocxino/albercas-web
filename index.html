@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Instalación de Albercas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="solicitud.html">Solicitar Cotización</a></li>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="#" onclick="mostrarCarrito()">🛒 Carrito (<span id="contador">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Swimool Pools and Construction</h1>
+        <p>Especialistas en instalación de albercas residenciales y comerciales</p>
+    </header>
+
+    <main>
+        <p>Ofrecemos diseños modernos, instalación rápida, reparación y mantenimiento personalizado para tu alberca ideal.</p>
+
+        <section class="catalogo">
+            <h2>Catálogo de Albercas Disponibles</h2>
+
+            <div class="producto">
+                <img src="img/fibra.jpg" alt="Alberca de fibra de vidrio">
+                <h3>Fibra de vidrio</h3>
+                <p>Instalación rápida, fácil mantenimiento, ideal para patios pequeños y medianos.</p>
+                <button onclick="agregarAlCarrito('Fibra de vidrio')">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="img/concreto.jpg" alt="Alberca de concreto">
+                <h3>Concreto</h3>
+                <p>Diseño personalizado, mayor durabilidad. Perfecta para proyectos a medida.</p>
+                <button onclick="agregarAlCarrito('Concreto')">Agregar al carrito</button>
+            </div>
+
+            <div class="producto">
+                <img src="img/inflable.jpg" alt="Alberca inflable">
+                <h3>Inflable</h3>
+                <p>Opciones económicas y temporales. Ideal para niños y espacios pequeños.</p>
+                <button onclick="agregarAlCarrito('Inflable')">Agregar al carrito</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="carrito" class="carrito oculto">
+        <h2>Carrito de compras</h2>
+        <ul id="lista-carrito"></ul>
+        <button onclick="cerrarCarrito()">Cerrar</button>
+    </div>
+
+    <script>
+        let carrito = [];
+
+        function agregarAlCarrito(producto) {
+            carrito.push(producto);
+            actualizarContador();
+            alert(producto + " fue agregado al carrito.");
+        }
+
+        function actualizarContador() {
+            document.getElementById("contador").textContent = carrito.length;
+        }
+
+        function mostrarCarrito() {
+            const lista = document.getElementById("lista-carrito");
+            lista.innerHTML = "";
+            carrito.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                lista.appendChild(li);
+            });
+            document.getElementById("carrito").classList.remove("oculto");
+        }
+
+        function cerrarCarrito() {
+            document.getElementById("carrito").classList.add("oculto");
+        }
+    </script>
+</body>
+</html>
