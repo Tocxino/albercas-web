@@ -1,204 +1,320 @@
-* {
-    box-sizing: border-box;
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e0f7fa;
+    background-color: #f8f8f8;
     color: #333;
     line-height: 1.6;
 }
 
-main {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
+header {
+    background-color: #6a1b9a; /* Morado Oscuro */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-nav {
-    background-color: #004d40;
-    padding: 10px 0;
+header h1 {
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: 2.5em;
 }
 
 nav ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    background-color: #7b1fa2; /* Un poco más claro */
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-header {
-    background-color: #00796b;
+nav ul li a {
     color: white;
-    padding: 30px;
-    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
 }
 
-header h1 {
-    margin-bottom: 10px;
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #9c27b0; /* Morado más vivo */
 }
 
-form {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
-    max-width: 600px;
+main {
+    padding: 20px;
+    max-width: 1200px;
     margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Estilos de la página de Productos (index.html) */
+.products-container {
     display: flex;
     flex-direction: column;
+    gap: 40px; /* Espacio entre los bollos */
 }
 
-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input,
-form select,
-form textarea {
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-form button {
-    background-color: #00796b;
-    color: white;
-    padding: 12px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #004d40;
-}
-
-.catalogo {
-    text-align: center;
-    background-color: #f1f8e9;
-    padding: 30px 20px;
+.bollo-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #eee;
     border-radius: 10px;
-}
-
-.catalogo h2 {
-    color: #2e7d32;
-    margin-bottom: 25px;
-}
-
-.producto {
-    display: inline-block;
-    width: 280px;
-    margin: 15px;
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    vertical-align: top;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
 }
 
-.producto img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+.bollo-item:hover {
+    transform: translateY(-5px);
 }
 
-.producto h3 {
-    color: #00796b;
-    margin: 10px 0;
-}
-
-.producto p {
-    padding: 0 15px 15px;
-    font-size: 0.95rem;
-    color: #555;
-}
-
-.producto button {
-    background-color: #00796b;
-    color: white;
-    padding: 10px;
-    width: 90%;
-    margin: 10px auto 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.producto button:hover {
-    background-color: #004d40;
-}
-
-.carrito {
-    position: fixed;
-    top: 80px;
-    right: 20px;
-    width: 300px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+.bollo-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    z-index: 999;
 }
 
-.carrito h2 {
-    color: #00796b;
-    font-size: 1.2rem;
+.bollo-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.bollo-description {
+    flex: 2;
+    padding: 15px;
+}
+
+.bollo-description h2 {
+    color: #6a1b9a; /* Morado Oscuro */
+    font-size: 2em;
+    margin-top: 0;
     margin-bottom: 10px;
 }
 
-.carrito ul {
-    list-style: none;
-    max-height: 200px;
-    overflow-y: auto;
-    padding-left: 10px;
+.bollo-description p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.carrito li {
-    margin: 5px 0;
+/* Alternancia de imagen y descripción */
+.bollo-item.right-image {
+    flex-direction: row-reverse; /* Invertir orden para imagen a la derecha */
 }
 
-.carrito button {
-    background-color: #004d40;
+.bollo-item.left-image {
+    flex-direction: row; /* Imagen a la izquierda (por defecto, pero explícito) */
+}
+
+/* Botón "Lo Quiero" */
+.lo-quiero-btn {
+    background-color: #ff9800; /* Naranja vibrante */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.lo-quiero-btn:hover {
+    background-color: #fb8c00; /* Naranja más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+/* Estilos de la página de Reseñas (reseñas.html) */
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.review-item {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.review-item h3 {
+    color: #4a148c; /* Morado más oscuro */
+    margin-top: 0;
+    font-style: italic;
+}
+
+.review-item p {
+    text-align: right;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* Estilos de la página de Pedidos (pedidos.html) */
+.order-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #4a148c; /* Morado Oscuro */
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Para que el padding no aumente el ancho total */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #9c27b0;
+    outline: none;
+    box-shadow: 0 0 5px rgba(156, 39, 176, 0.5);
+}
+
+.form-group small {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Estilos para la sección de productos grupales */
+#bollos-agregados > div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#bollos-agregados > div select {
+    flex: 1; /* Permitir que los selects ocupen espacio */
+}
+
+#bollos-agregados > div .remove-bollo {
+    background-color: #f44336; /* Rojo */
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.oculto {
-    display: none;
-}
-
-h2, h3 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #004d40;
-}
-
-#catalogo-preview {
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color 0.2s ease;
+}
+
+#bollos-agregados > div .remove-bollo:hover {
+    background-color: #d32f2f;
+}
+
+#addBolloGrupal {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#addBolloGrupal:hover {
+    background-color: #45a049;
+}
+
+button[type="submit"] {
+    background-color: #ff9800; /* Naranja vibrante */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #fb8c00;
+    transform: translateY(-2px);
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        padding: 10px 15px;
+    }
+
+    .bollo-item {
+        flex-direction: column !important; /* Forzar columna en móviles */
+        text-align: center;
+    }
+
+    .bollo-image {
+        order: -1; /* Mover imagen arriba en móviles */
+        margin-bottom: 20px;
+    }
+
+    .bollo-description {
+        padding: 0;
+    }
+
+    .lo-quiero-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
